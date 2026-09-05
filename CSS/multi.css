@@ -13,12 +13,20 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   background-color: #ededed; /* Fondo general claro estilo revista */
   color: #1a1a1a;
   overflow-x: hidden;
   padding-top: 85px; /* Evita que el header fijo tape el inicio del contenido */
+}
+
+img, iframe, video, embed, object {
+  max-width: 100%;
 }
 
 /* ==========================================================================
@@ -58,11 +66,35 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .logo img {
   height: 55px;
   display: block;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 19px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.nav-toggle-label span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: var(--blanco-puro);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .nav-links {
@@ -208,11 +240,55 @@ footer p { font-size: 11px; color: rgba(255,255,255,0.35); margin-bottom: 4px; }
    8. RESPONSIVE BASE (menú móvil apilado)
    ========================================================================== */
 @media (max-width: 768px) {
-  body { padding-top: 130px; }
+  .nav-toggle-label { display: flex; }
 
-  header { position: absolute; }
-  .navbar { flex-direction: column; gap: 14px; padding: 15px; }
-  .nav-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
+  .nav-links {
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 16px 20px;
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+
+  .nav-toggle:checked ~ .nav-links {
+    max-height: 400px;
+  }
+
+  .nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .nav-toggle:checked ~ .nav-toggle-label span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle:checked ~ .nav-toggle-label span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+@media (max-width: 380px) {
+  .logo img { height: 44px; }
 }
 /* ==========================================================================
    MULTI.CSS — Solo para paginicio/multimedia.html
