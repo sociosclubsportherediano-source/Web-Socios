@@ -806,11 +806,14 @@ footer p { font-size: 11px; color: rgba(255,255,255,0.35); margin-bottom: 4px; }
 }
 
 .about-container {
-  max-width: 800px;
+  max-width: 1100px;
   margin: auto;
 }
 
 .about-commission p {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
   font-size: 16px;
   line-height: 1.8;
   color: var(--gris-textos);
@@ -841,7 +844,7 @@ footer p { font-size: 11px; color: rgba(255,255,255,0.35); margin-bottom: 4px; }
 .commission-members-list ul {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 25px;
 }
 
@@ -849,6 +852,7 @@ footer p { font-size: 11px; color: rgba(255,255,255,0.35); margin-bottom: 4px; }
   background: var(--blanco-puro);
   color: var(--gris-oscuro);
   padding: 30px 20px;
+  min-height: 140px;
   border-radius: 6px;
   font-size: 14.5px;
   font-weight: 700;
@@ -856,7 +860,7 @@ footer p { font-size: 11px; color: rgba(255,255,255,0.35); margin-bottom: 4px; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 12px;
   border: 1px solid #e0e0e0;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
@@ -887,15 +891,15 @@ footer p { font-size: 11px; color: rgba(255,255,255,0.35); margin-bottom: 4px; }
   box-shadow: 0 10px 25px rgba(226, 180, 66, 0.15);
 }
 
+/* Tarjeta de la asesora */
 .commission-members-list li:has(strong) {
   border-color: var(--rojo);
   background: linear-gradient(to bottom, var(--blanco-puro), #fff9f9);
 }
 
+/* Sin badge en la tarjeta de la asesora (solo se muestra "ASESORA:") */
 .commission-members-list li:has(strong)::before {
-  color: var(--rojo);
-  border-color: rgba(158, 11, 31, 0.3);
-  background: rgba(158, 11, 31, 0.05);
+  display: none;
 }
 
 .commission-members-list li strong {
@@ -907,6 +911,19 @@ footer p { font-size: 11px; color: rgba(255,255,255,0.35); margin-bottom: 4px; }
   letter-spacing: 0.5px;
   display: block;
   margin-top: 2px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .commission-members-list ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .commission-members-list ul {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* 3. Lista de Actividades (Formato Crónica Editorial) */
