@@ -893,7 +893,6 @@ footer p { font-size: 11px; color: rgba(255,255,255,0.35); margin-bottom: 4px; }
 }
 
 .commission-members-list li:has(strong)::before {
-  content: "DIRECTIVA";
   color: var(--rojo);
   border-color: rgba(158, 11, 31, 0.3);
   background: rgba(158, 11, 31, 0.05);
