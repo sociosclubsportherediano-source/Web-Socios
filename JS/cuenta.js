@@ -11,6 +11,42 @@
     return Number(p[2]) + ' de ' + MESES[Number(p[1]) - 1] + ' de ' + p[0];
   }
 
+  function fechaValida(iso) {
+    var m = String(iso || '').match(/^(\\d{4})-(\\d{2})-(\\d{2})/);
+    if (!m) return null;
+    var fecha = new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
+    if (fecha.getFullYear() !== Number(m[1]) || fecha.getMonth() !== Number(m[2]) - 1 || fecha.getDate() !== Number(m[3])) return null;
+    return fecha;
+  }
+
+  function tiempoDeAsociado(iso) {
+    var inicio = fechaValida(iso);
+    if (!inicio) return 'Sin registrar';
+
+    var hoy = new Date();
+    hoy = new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate());
+    if (inicio > hoy) return 'Fecha de ingreso futura';
+
+    var anios = hoy.getFullYear() - inicio.getFullYear();
+    var meses = hoy.getMonth() - inicio.getMonth();
+    var dias = hoy.getDate() - inicio.getDate();
+
+    if (dias < 0) {
+      meses--;
+      dias += new Date(hoy.getFullYear(), hoy.getMonth(), 0).getDate();
+    }
+    if (meses < 0) {
+      anios--;
+      meses += 12;
+    }
+
+    var partes = [];
+    if (anios > 0) partes.push(anios + (anios === 1 ? ' año' : ' años'));
+    if (meses > 0) partes.push(meses + (meses === 1 ? ' mes' : ' meses'));
+    if (dias > 0 || partes.length === 0) partes.push(dias + (dias === 1 ? ' día' : ' días'));
+    return partes.join(', ');
+  }
+
   fetch('/api/yo', { credentials: 'same-origin', cache: 'no-store' })
     .then(function (r) { return r.ok ? r.json() : null; })
     .then(function (j) {
@@ -21,7 +57,8 @@
       document.querySelectorAll('#datos-socio dd[data-campo]').forEach(function (dd) {
         var campo = dd.dataset.campo;
         var valor = s[campo];
-        if (campo === 'vencimiento' && valor) valor = formatearFecha(valor);
+        if ((campo === 'vencimiento' || campo === 'fecha_ingreso') && valor) valor = formatearFecha(valor);
+        if (campo === 'tiempo_asociado') valor = tiempoDeAsociado(s.fecha_ingreso);
         if (valor) {
           dd.textContent = valor;
           dd.hidden = false;

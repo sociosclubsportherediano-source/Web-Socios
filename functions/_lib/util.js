@@ -101,7 +101,7 @@ export async function socioDeSesion(request, env) {
   if (!token || !configurado(env)) return null;
   const clave = await huella(env.AUTH_SECRET, `sesion:${token}`);
   return await env.DB.prepare(
-    `SELECT s.id, s.numero_socio, s.nombre, s.correo, s.telefono, s.sector, s.tipo_membresia, s.vencimiento
+    `SELECT s.id, s.numero_socio, s.nombre, s.correo, s.telefono, s.sector, s.tipo_membresia, s.fecha_ingreso, s.vencimiento
        FROM sesiones se JOIN socios s ON s.id = se.socio_id
       WHERE se.token_hash = ? AND se.expira_en > ? AND s.estado = 'activo'`
   ).bind(clave, ahora()).first();
