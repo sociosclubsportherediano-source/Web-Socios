@@ -5,31 +5,32 @@
   var LOGIN = '/paginicio/acceso-asociados.html';
   var MESES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'setiembre', 'octubre', 'noviembre', 'diciembre'];
 
-  function formatearFecha(iso) {
-    var p = String(iso || '').split('-');
-    if (p.length !== 3) return iso;
-    return Number(p[2]) + ' de ' + MESES[Number(p[1]) - 1] + ' de ' + p[0];
-  }
-
-  function fechaValida(iso) {
-    var m = String(iso || '').match(/^(\\d{4})-(\\d{2})-(\\d{2})/);
+  function parsearFecha(iso) {
+    var m = String(iso || '').slice(0, 10).match(/^(\d{4})-(\d{2})-(\d{2})$/);
     if (!m) return null;
     var fecha = new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
-    if (fecha.getFullYear() !== Number(m[1]) || fecha.getMonth() !== Number(m[2]) - 1 || fecha.getDate() !== Number(m[3])) return null;
+    if (fecha.getFullYear() !== Number(m[1]) ||
+        fecha.getMonth() !== Number(m[2]) - 1 ||
+        fecha.getDate() !== Number(m[3])) return null;
     return fecha;
   }
 
-  function tiempoDeAsociado(iso) {
-    var inicio = fechaValida(iso);
-    if (!inicio) return 'Sin registrar';
+  function formatearFecha(iso) {
+    var fecha = parsearFecha(iso);
+    if (!fecha) return iso || '';
+    return fecha.getDate() + ' de ' + MESES[fecha.getMonth()] + ' de ' + fecha.getFullYear();
+  }
 
+  function tiempoDeAsociado(iso) {
+    var ingreso = parsearFecha(iso);
+    if (!ingreso) return '';
     var hoy = new Date();
     hoy = new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate());
-    if (inicio > hoy) return 'Fecha de ingreso futura';
+    if (ingreso > hoy) return 'Fecha de ingreso futura';
 
-    var anios = hoy.getFullYear() - inicio.getFullYear();
-    var meses = hoy.getMonth() - inicio.getMonth();
-    var dias = hoy.getDate() - inicio.getDate();
+    var anios = hoy.getFullYear() - ingreso.getFullYear();
+    var meses = hoy.getMonth() - ingreso.getMonth();
+    var dias = hoy.getDate() - ingreso.getDate();
 
     if (dias < 0) {
       meses--;
