@@ -23,6 +23,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+    .comunicado-temporal { width: min(100% - 32px, 1100px); margin: 28px auto 36px; text-align: center; }
+    .comunicado-temporal img { display: block; width: 100%; height: auto; max-height: 680px; object-fit: contain; margin: 0 auto; border-radius: 12px; }
+    @media (max-width: 600px) { .comunicado-temporal { width: calc(100% - 24px); margin: 20px auto 28px; } .comunicado-temporal img { border-radius: 8px; } }
+</style>
 </head>
 <body>
     <header class="header-asociados">
@@ -56,6 +61,10 @@
             <span class="subtitle">Zona de asociados</span>
             <h1 id="saludo">Hola</h1>
             <p class="lead">Aquí vas a encontrar todo lo exclusivo para quienes forman parte de la asociación.</p>
+        </section>
+
+        <section class="comunicado-temporal" aria-label="Comunicado importante">
+            <img src="../IMG/comunicado.png" alt="Comunicado importante para asociados">
         </section>
 
         <section class="account-section">
