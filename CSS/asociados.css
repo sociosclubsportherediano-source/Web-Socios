@@ -1309,3 +1309,47 @@
   .musica-pista:last-child { grid-column:1 / -1; }
   .musica-pista { justify-content:flex-start; }
 }
+
+
+/* ---------- Comunicado temporal para asociados ---------- */
+.comunicado-temporal {
+  width: min(100% - 40px, 720px);
+  margin: 28px auto 42px;
+  padding: 10px;
+  position: relative;
+  background: #fff;
+  border: 1px solid #d8d8d8;
+  border-radius: 3px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+.comunicado-temporal::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 10px;
+  right: 10px;
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    var(--rojo) 0 48%,
+    var(--amarillo-dorado) 48% 100%
+  );
+}
+
+.comunicado-temporal img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #eeeeee;
+  border-radius: 1px;
+}
+
+@media (max-width: 600px) {
+  .comunicado-temporal {
+    width: calc(100% - 28px);
+    margin: 22px auto 32px;
+    padding: 6px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.10);
+  }
+}
