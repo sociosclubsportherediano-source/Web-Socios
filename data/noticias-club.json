@@ -1,6 +1,36 @@
 {
   "noticias": [
     {
+      "titulo": "HEREDIANO VS INTER SAN CARLOS: ENTRADAS A LA VENTA",
+      "fecha": "2026-11-06",
+      "fecha_hora": "2026-11-06T16:01:12-06:00",
+      "imagen": "https://ehmhligiadhmhmrjnpop.supabase.co/storage/v1/object/public/news-uploads/covers/1794002259746-whatsapp-image-2026-11-06-at-3-01-12-pm.jpeg",
+      "resumen": "¡Este domingo recibimos a Inter San Carlos en nuestra CASA! 🏟️❤️💛 🎟️ Entradas a la venta en: Oficinas del Club y…",
+      "categoria": "Noticias",
+      "fuente": "herediano.com",
+      "url": "https://www.herediano.com/noticias/herediano-vs-inter-san-carlos-entradas-a-la-venta"
+    },
+    {
+      "titulo": "¡ORGULLO ROJIAMARILLO EN EL MUNDIAL!",
+      "fecha": "2026-11-05",
+      "fecha_hora": "2026-11-05T15:04:59-06:00",
+      "imagen": "https://ehmhligiadhmhmrjnpop.supabase.co/storage/v1/object/public/news-uploads/covers/1793912514831-dsc06177-jpg.jpeg",
+      "resumen": "El talento rojiamarillo dirá presente en la máxima cita del fútbol mundial Sub-17. Nuestro jugador, Keylord Madrigal Trujillo, fue convocado por la Selección Nacional Masculina para representar a…",
+      "categoria": "Noticias",
+      "fuente": "herediano.com",
+      "url": "https://www.herediano.com/noticias/orgullo-rojiamarillo-en-el-mundial"
+    },
+    {
+      "titulo": "herediano vs saprissa: entradas a la venta",
+      "fecha": "2026-11-02",
+      "fecha_hora": "2026-11-02T15:51:46-06:00",
+      "imagen": "https://ehmhligiadhmhmrjnpop.supabase.co/storage/v1/object/public/news-uploads/covers/1793657981824-1985d659-bb80-4d62-8f3d-e77691023635.jpeg",
+      "resumen": "¡Este jueves recibimos al DEPORTIVO SAPRISSA en nuestra CASA! 🏟️❤️💛 🎟️ Entradas a la venta en: Oficinas del Club y…",
+      "categoria": "Noticias",
+      "fuente": "herediano.com",
+      "url": "https://www.herediano.com/noticias/herediano-vs-saprissa-entradas-a-la-venta"
+    },
+    {
       "titulo": "HEREDIANO VS CARTAGINÉS: ENTRADAS A LA VENTA",
       "fecha": "2026-10-20",
       "fecha_hora": "2026-10-20T10:25:36-06:00",
@@ -269,36 +299,6 @@
       "categoria": "Noticias",
       "fuente": "herediano.com",
       "url": "https://www.herediano.com/noticias/carta-de-jafet-soto-hacia-el-club-sport-herediano-en-su-105-aniversario"
-    },
-    {
-      "titulo": "CRONOGRAMA DE ACTIVIDADES 12 de junio: 105 ANIVERSARIO",
-      "fecha": "2026-06-10",
-      "fecha_hora": "2026-06-10T11:03:57-06:00",
-      "imagen": "https://ehmhligiadhmhmrjnpop.supabase.co/storage/v1/object/public/news-uploads/covers/1781110800320-celebraci-n.jpeg",
-      "resumen": "Este 12 de junio celebramos 105 años de historia, pasión y tradición. Por eso, hemos preparado una serie de actividades especiales para que nuestra afición sea parte de esta gran celebración y…",
-      "categoria": "Noticias",
-      "fuente": "herediano.com",
-      "url": "https://www.herediano.com/noticias/cronograma-de-actividades-aniversario-12-de-junio"
-    },
-    {
-      "titulo": "Llega la II Edición del Campa FUT y Recreación junto a Solo Cracks",
-      "fecha": "2026-06-09",
-      "fecha_hora": "2026-06-09T17:04:28-06:00",
-      "imagen": "https://ehmhligiadhmhmrjnpop.supabase.co/storage/v1/object/public/news-uploads/covers/1781046256649-whatsapp-image-2026-06-05-at-10-50-28-am.jpeg",
-      "resumen": "El Club Sport Herediano, en conjunto con Solo Cracks, realizará la II Edición del Campa FUT y Recreación del 8 al 10 de julio de 2026 en las instalaciones del Complejo Montaña de Piedra, ubicado en…",
-      "categoria": "Noticias",
-      "fuente": "herediano.com",
-      "url": "https://www.herediano.com/noticias/llega-la-ii-edicion-del-campa-fut-y-recreacion-junto-a-solo-cracks"
-    },
-    {
-      "titulo": "Reggy Rivera: Bienvenido al Campeón Nacional",
-      "fecha": "2026-05-26",
-      "fecha_hora": "2026-05-26T14:57:01-06:00",
-      "imagen": "https://ehmhligiadhmhmrjnpop.supabase.co/storage/v1/object/public/news-uploads/covers/1779828969866-reggy.jpeg",
-      "resumen": "El jugador Reggy Rivera será nuevo refuerzo de nuestro equipo para el próximo torneo de Apertura 2026. Rivera se une a “El Team” procedente de la Asociación Deportiva San Carlos. Ficha Técnica:…",
-      "categoria": "Noticias",
-      "fuente": "herediano.com",
-      "url": "https://www.herediano.com/noticias/reggy-rivera-bienvenido-al-campeon-nacional"
     }
   ]
 }
